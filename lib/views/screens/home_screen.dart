@@ -21,7 +21,7 @@ class HomeScreen extends StatelessWidget {
             color: _getBackgroundColor(state),
             child: Center(
               child: Text(
-                'Hello There!',
+                'Hello there',
                 style: TextStyle(
                   fontSize: 32,
                   color: _getTextColor(state),
