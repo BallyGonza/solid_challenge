@@ -13,7 +13,6 @@ class ColorsState with _$ColorsState {
   /// @param green The green value.
   /// @param blue The blue value.
   const factory ColorsState.loaded({
-    required int opacity,
     required int red,
     required int green,
     required int blue,

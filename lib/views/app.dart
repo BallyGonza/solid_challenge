@@ -4,9 +4,9 @@ import 'package:solid_challenge/cubits/cubits.dart';
 import 'package:solid_challenge/views/views.dart';
 
 /// The main app widget.
-class App extends StatelessWidget {
+class Main extends StatelessWidget {
   /// The main app widget.
-  const App();
+  const Main();
 
   @override
   Widget build(BuildContext context) {

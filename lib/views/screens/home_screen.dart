@@ -15,11 +15,19 @@ class HomeScreen extends StatelessWidget {
       builder: (context, state) => GestureDetector(
         onTap: () => context.read<ColorsCubit>().change(),
         child: Scaffold(
-          backgroundColor: _getBackgroundColor(state),
-          body: Center(
-            child: Text(
-              'Hello There!',
-              style: TextStyle(fontSize: 32, color: _getTextColor(state)),
+          body: AnimatedContainer(
+            duration: const Duration(milliseconds: 200),
+            curve: Curves.easeInCubic,
+            color: _getBackgroundColor(state),
+            child: Center(
+              child: Text(
+                'Hello There!',
+                style: TextStyle(
+                  fontSize: 32,
+                  color: _getTextColor(state),
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
             ),
           ),
         ),
@@ -30,27 +38,22 @@ class HomeScreen extends StatelessWidget {
   /// Returns the background color based on the state.
   Color _getBackgroundColor(ColorsState state) {
     return state is ColorsStateLoaded
-        ? Color.fromARGB(
-            state.opacity,
-            state.red,
-            state.green,
-            state.blue,
-          )
+        ? Color.fromARGB(255, state.red, state.green, state.blue)
         : Colors.white;
   }
 
   /// Returns the text color based on the luminance of the background color.
   Color _getTextColor(ColorsState state) {
-    return state is ColorsStateLoaded
-        ? Color.fromARGB(
-                  state.opacity,
-                  state.red,
-                  state.green,
-                  state.blue,
-                ).computeLuminance() <
-                0.8
-            ? Colors.white
-            : Colors.black
-        : Colors.black;
+    if (state is ColorsStateLoaded) {
+      final color = Color.fromARGB(255, state.red, state.green, state.blue);
+
+      final luminance = color.computeLuminance();
+
+      if (luminance < 0.5) {
+        return Colors.white;
+      }
+    }
+
+    return Colors.black;
   }
 }

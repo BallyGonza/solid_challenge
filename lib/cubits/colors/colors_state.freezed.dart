@@ -19,21 +19,21 @@ mixin _$ColorsState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(int opacity, int red, int green, int blue) loaded,
+    required TResult Function(int red, int green, int blue) loaded,
     required TResult Function(String error) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(int opacity, int red, int green, int blue)? loaded,
+    TResult? Function(int red, int green, int blue)? loaded,
     TResult? Function(String error)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(int opacity, int red, int green, int blue)? loaded,
+    TResult Function(int red, int green, int blue)? loaded,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) =>
@@ -125,7 +125,7 @@ class _$ColorsStateInitialImpl implements ColorsStateInitial {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(int opacity, int red, int green, int blue) loaded,
+    required TResult Function(int red, int green, int blue) loaded,
     required TResult Function(String error) error,
   }) {
     return initial();
@@ -135,7 +135,7 @@ class _$ColorsStateInitialImpl implements ColorsStateInitial {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(int opacity, int red, int green, int blue)? loaded,
+    TResult? Function(int red, int green, int blue)? loaded,
     TResult? Function(String error)? error,
   }) {
     return initial?.call();
@@ -145,7 +145,7 @@ class _$ColorsStateInitialImpl implements ColorsStateInitial {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(int opacity, int red, int green, int blue)? loaded,
+    TResult Function(int red, int green, int blue)? loaded,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
@@ -200,7 +200,7 @@ abstract class _$$ColorsStateLoadedImplCopyWith<$Res> {
           $Res Function(_$ColorsStateLoadedImpl) then) =
       __$$ColorsStateLoadedImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({int opacity, int red, int green, int blue});
+  $Res call({int red, int green, int blue});
 }
 
 /// @nodoc
@@ -216,16 +216,11 @@ class __$$ColorsStateLoadedImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? opacity = null,
     Object? red = null,
     Object? green = null,
     Object? blue = null,
   }) {
     return _then(_$ColorsStateLoadedImpl(
-      opacity: null == opacity
-          ? _value.opacity
-          : opacity // ignore: cast_nullable_to_non_nullable
-              as int,
       red: null == red
           ? _value.red
           : red // ignore: cast_nullable_to_non_nullable
@@ -246,13 +241,8 @@ class __$$ColorsStateLoadedImplCopyWithImpl<$Res>
 
 class _$ColorsStateLoadedImpl implements ColorsStateLoaded {
   const _$ColorsStateLoadedImpl(
-      {required this.opacity,
-      required this.red,
-      required this.green,
-      required this.blue});
+      {required this.red, required this.green, required this.blue});
 
-  @override
-  final int opacity;
   @override
   final int red;
   @override
@@ -262,7 +252,7 @@ class _$ColorsStateLoadedImpl implements ColorsStateLoaded {
 
   @override
   String toString() {
-    return 'ColorsState.loaded(opacity: $opacity, red: $red, green: $green, blue: $blue)';
+    return 'ColorsState.loaded(red: $red, green: $green, blue: $blue)';
   }
 
   @override
@@ -270,14 +260,13 @@ class _$ColorsStateLoadedImpl implements ColorsStateLoaded {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ColorsStateLoadedImpl &&
-            (identical(other.opacity, opacity) || other.opacity == opacity) &&
             (identical(other.red, red) || other.red == red) &&
             (identical(other.green, green) || other.green == green) &&
             (identical(other.blue, blue) || other.blue == blue));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, opacity, red, green, blue);
+  int get hashCode => Object.hash(runtimeType, red, green, blue);
 
   /// Create a copy of ColorsState
   /// with the given fields replaced by the non-null parameter values.
@@ -292,32 +281,32 @@ class _$ColorsStateLoadedImpl implements ColorsStateLoaded {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(int opacity, int red, int green, int blue) loaded,
+    required TResult Function(int red, int green, int blue) loaded,
     required TResult Function(String error) error,
   }) {
-    return loaded(opacity, red, green, blue);
+    return loaded(red, green, blue);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(int opacity, int red, int green, int blue)? loaded,
+    TResult? Function(int red, int green, int blue)? loaded,
     TResult? Function(String error)? error,
   }) {
-    return loaded?.call(opacity, red, green, blue);
+    return loaded?.call(red, green, blue);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(int opacity, int red, int green, int blue)? loaded,
+    TResult Function(int red, int green, int blue)? loaded,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded(opacity, red, green, blue);
+      return loaded(red, green, blue);
     }
     return orElse();
   }
@@ -359,12 +348,10 @@ class _$ColorsStateLoadedImpl implements ColorsStateLoaded {
 
 abstract class ColorsStateLoaded implements ColorsState {
   const factory ColorsStateLoaded(
-      {required final int opacity,
-      required final int red,
+      {required final int red,
       required final int green,
       required final int blue}) = _$ColorsStateLoadedImpl;
 
-  int get opacity;
   int get red;
   int get green;
   int get blue;
@@ -446,7 +433,7 @@ class _$ColorsStateErrorImpl implements ColorsStateError {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(int opacity, int red, int green, int blue) loaded,
+    required TResult Function(int red, int green, int blue) loaded,
     required TResult Function(String error) error,
   }) {
     return error(this.error);
@@ -456,7 +443,7 @@ class _$ColorsStateErrorImpl implements ColorsStateError {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(int opacity, int red, int green, int blue)? loaded,
+    TResult? Function(int red, int green, int blue)? loaded,
     TResult? Function(String error)? error,
   }) {
     return error?.call(this.error);
@@ -466,7 +453,7 @@ class _$ColorsStateErrorImpl implements ColorsStateError {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(int opacity, int red, int green, int blue)? loaded,
+    TResult Function(int red, int green, int blue)? loaded,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
