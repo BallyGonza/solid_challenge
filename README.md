@@ -1,4 +1,4 @@
-# solid_challenge
+# Solid_challenge by Gonzalo Bally
 
 ## Overview
 
