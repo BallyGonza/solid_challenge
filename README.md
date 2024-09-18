@@ -4,23 +4,23 @@
 
 solid_challenge is a simple app that demonstrates dynamic UI updates using Flutter and the BLoC pattern. The app displays a "Hello There!" message centered on the screen. When the user taps anywhere on the screen, the background color changes randomly, with the app able to generate 16,777,216 unique colors (using the full RGB color range).
 
-### Features
+## Features
 
 - Displays a "Hello There!" message in the center of the screen.
 - Changes the background color to a new random color on each tap.
 - Can generate 16,777,216 unique background colors (based on RGB values).
 - Built using the BLoC pattern for state management.
   
-### Getting Started
+## Getting Started
 
-## Prerequisites
+### Prerequisites
 To run this app, you need to have the following installed on your local machine:
 
 - Flutter (ensure it's up to date)
 - A text editor or IDE like Visual Studio Code or Android Studio
 - An emulator or physical device for testing
   
-## Installation
+### Installation
 - Clone the repository:
 git clone https://github.com/your-username/solid_challenge.git
 
@@ -31,7 +31,7 @@ cd solid_challenge
 Run the following command to install the necessary packages:
 flutter pub get
 
-## Running the App
+### Running the App
 - Start your emulator or connect a physical device.
 - Run the app using the following command:
 flutter run
